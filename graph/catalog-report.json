@@ -1,0 +1,577 @@
+{
+  "generatedBy": "scripts/build-catalog.mjs",
+  "datasets": {
+    "themes": {
+      "provenance": "config",
+      "from": [
+        "shaheen-superapp:T@L12",
+        "shahin-nexus:T@L18",
+        "shahin-green-media:C@L245"
+      ]
+    },
+    "platforms": {
+      "provenance": "config",
+      "from": [
+        "shahin-nexus:PLATFORMS@L50",
+        "shahin-campaign:PLATFORMS@L10"
+      ],
+      "entries": 6
+    },
+    "campaignGoals": {
+      "provenance": "config",
+      "from": [
+        "shahin-campaign:L364@L364",
+        "shahin-nexus:L533@L533"
+      ],
+      "entries": 4
+    },
+    "campaignTones": {
+      "provenance": "config",
+      "from": [
+        "shahin-campaign:L375@L375",
+        "shahin-nexus:L538@L538"
+      ],
+      "entries": 4
+    },
+    "sectors": {
+      "provenance": "demo",
+      "from": [
+        "shahin-green-media:SECTORS@L12",
+        "shahin-nexus:SECTORS@L59",
+        "shahin-nexus:pcts@L652"
+      ],
+      "demoFields": [
+        "market",
+        "sharePct"
+      ],
+      "entries": 6
+    },
+    "mediaTypes": {
+      "provenance": "config",
+      "from": [
+        "shahin-green-media:MEDIA_TYPES@L21",
+        "shahin-nexus:MEDIA_TYPES@L67"
+      ],
+      "entries": 6
+    },
+    "pipelineAgents": {
+      "provenance": "config",
+      "from": [
+        "shahin-green-media:AGENTS@L4",
+        "shahin-nexus:PIPELINE@L103"
+      ],
+      "entries": 5
+    },
+    "investorProfiles": {
+      "provenance": "demo",
+      "from": [
+        "shahin-green-media:INVESTOR_PROFILES@L30",
+        "shahin-nexus:INVESTORS@L94"
+      ],
+      "demoFields": [
+        "budget",
+        "interestPct",
+        "priority"
+      ],
+      "entries": 6
+    },
+    "offerTiers": {
+      "provenance": "demo",
+      "from": [
+        "shahin-nexus:OFFER_TIERS@L74",
+        "shahin-campaign:OFFER_TEMPLATES@L19"
+      ],
+      "demoFields": [
+        "price",
+        "bonus",
+        "perks"
+      ],
+      "entries": 3
+    },
+    "referralTree": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:TREE_DATA@L100",
+        "shahin-nexus:TREE_ROOT@L80",
+        "shahin-campaign:TREE_DATA@L25"
+      ]
+    },
+    "treeStats": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:L836@L836",
+        "shahin-nexus:L671@L671",
+        "shahin-campaign:L524@L524"
+      ],
+      "entries": 3
+    },
+    "commissionLevels": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:L852@L852"
+      ],
+      "entries": 3
+    },
+    "referralSteps": {
+      "provenance": "config",
+      "from": [
+        "shahin-campaign:L502@L502"
+      ],
+      "entries": 4
+    },
+    "referralCode": {
+      "provenance": "demo",
+      "from": [
+        "regex SHN-REF-* in campaign/nexus/superapp"
+      ]
+    },
+    "divisions": {
+      "provenance": "config",
+      "from": [
+        "shahin-nexus:DIVISIONS@L111"
+      ],
+      "entries": 5
+    },
+    "dashboardStats": {
+      "provenance": "demo",
+      "from": [
+        "shahin-nexus:STATS@L139"
+      ],
+      "entries": 6
+    },
+    "orgSummary": {
+      "provenance": "demo",
+      "from": [
+        "shahin-nexus:L509@L509"
+      ],
+      "entries": 3
+    },
+    "bugRegistry": {
+      "provenance": "config",
+      "from": [
+        "shahin-nexus:BUGS@L148"
+      ],
+      "entries": 12
+    },
+    "engineerSuggestions": {
+      "provenance": "config",
+      "from": [
+        "shahin-nexus:L877@L877"
+      ],
+      "entries": 3
+    },
+    "quickActions": {
+      "provenance": "config",
+      "from": [
+        "shahin-nexus:L491@L491",
+        "shaheen-superapp:L469@L469"
+      ],
+      "entries": 8
+    },
+    "angels": {
+      "provenance": "config",
+      "from": [
+        "shaheen-superapp:ANGELS@L47"
+      ],
+      "entries": 9
+    },
+    "layers": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:LAYERS@L59"
+      ],
+      "demoFields": [
+        "metrics",
+        "desc"
+      ],
+      "entries": 7
+    },
+    "sovereignSummary": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:L610@L610"
+      ],
+      "entries": 3
+    },
+    "sovereignBootLog": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:LOG@L586"
+      ],
+      "entries": 8
+    },
+    "tokenAllocation": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:TOKEN_ALLOC@L69"
+      ],
+      "entries": 5
+    },
+    "contractInfo": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:L563@L563"
+      ],
+      "entries": 6
+    },
+    "products": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:PRODUCTS@L77"
+      ],
+      "demoFields": [
+        "price",
+        "shn",
+        "rating",
+        "reviews",
+        "badge"
+      ],
+      "entries": 12
+    },
+    "productCategories": {
+      "provenance": "config",
+      "from": [
+        "shaheen-superapp:CATS@L114"
+      ],
+      "entries": 5
+    },
+    "proposals": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:PROPOSALS@L92"
+      ],
+      "entries": 5
+    },
+    "proposalStatusColors": {
+      "provenance": "config",
+      "from": [
+        "shaheen-superapp:statusCol@L776"
+      ]
+    },
+    "newsTicker": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:L487@L487"
+      ],
+      "entries": 4
+    },
+    "walletActions": {
+      "provenance": "config",
+      "from": [
+        "shaheen-superapp:L883@L883"
+      ],
+      "entries": 4
+    },
+    "walletTokenStats": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:L894@L894"
+      ],
+      "entries": 3
+    },
+    "walletTransactions": {
+      "provenance": "demo",
+      "from": [
+        "shaheen-superapp:txns@L868"
+      ],
+      "entries": 4
+    },
+    "bankOptions": {
+      "provenance": "config",
+      "from": [
+        "shahin-nexus:L742@L742",
+        "shaheen-superapp:L925@L925",
+        "shahin-campaign:<option> elements"
+      ],
+      "entries": 7
+    },
+    "bankFormSteps": {
+      "provenance": "config",
+      "from": [
+        "shahin-nexus:L736@L736"
+      ],
+      "entries": 3
+    },
+    "demoPayouts": {
+      "provenance": "demo",
+      "from": [
+        "shahin-nexus:L790@L790"
+      ],
+      "entries": 3
+    }
+  },
+  "conflicts": [
+    {
+      "dataset": "platforms",
+      "key": "twitter",
+      "field": "color",
+      "kept": "#71767B",
+      "discarded": "#1a1a1a",
+      "discardedFrom": "shahin-campaign:PLATFORMS@L10"
+    },
+    {
+      "dataset": "platforms",
+      "key": "youtube",
+      "field": "color",
+      "kept": "#FF4444",
+      "discarded": "#FF0000",
+      "discardedFrom": "shahin-campaign:PLATFORMS@L10"
+    },
+    {
+      "dataset": "platforms",
+      "key": "tiktok",
+      "field": "color",
+      "kept": "#69C9D0",
+      "discarded": "#010101",
+      "discardedFrom": "shahin-campaign:PLATFORMS@L10"
+    },
+    {
+      "dataset": "platforms",
+      "key": "email",
+      "field": "name",
+      "kept": "البريد",
+      "discarded": "البريد الإلكتروني",
+      "discardedFrom": "shahin-campaign:PLATFORMS@L10"
+    },
+    {
+      "dataset": "sectors",
+      "key": "hydrogen",
+      "field": "label",
+      "kept": "الهيدروجين الأخضر",
+      "discarded": "الهيدروجين",
+      "discardedFrom": "shahin-nexus:SECTORS@L59"
+    },
+    {
+      "dataset": "mediaTypes",
+      "key": "video_script",
+      "field": "label",
+      "kept": "سكريبت فيديو إعلاني",
+      "discarded": "سكريبت فيديو",
+      "discardedFrom": "shahin-nexus:MEDIA_TYPES@L67"
+    },
+    {
+      "dataset": "mediaTypes",
+      "key": "pitch_deck",
+      "field": "label",
+      "kept": "عرض تقديمي للمستثمرين",
+      "discarded": "عرض تقديمي",
+      "discardedFrom": "shahin-nexus:MEDIA_TYPES@L67"
+    },
+    {
+      "dataset": "mediaTypes",
+      "key": "press",
+      "field": "label",
+      "kept": "بيان صحفي رسمي",
+      "discarded": "بيان صحفي",
+      "discardedFrom": "shahin-nexus:MEDIA_TYPES@L67"
+    },
+    {
+      "dataset": "mediaTypes",
+      "key": "social_pack",
+      "field": "label",
+      "kept": "حزمة سوشيال ميديا",
+      "discarded": "حزمة سوشيال",
+      "discardedFrom": "shahin-nexus:MEDIA_TYPES@L67"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "analyst",
+      "field": "color",
+      "kept": "#00ff88",
+      "discarded": "#00d97e",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "analyst",
+      "field": "role",
+      "kept": "يحلّل سوق المستثمرين ويحدد الأهداف عالية القيمة",
+      "discarded": "يحلل السوق ويحدد الفرص",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "strategy",
+      "field": "color",
+      "kept": "#00d4ff",
+      "discarded": "#00e5ff",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "strategy",
+      "field": "role",
+      "kept": "يبني خطة تمويل محكمة ومختبرة الأثر",
+      "discarded": "خطة تمويل 90 يوم",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "creative",
+      "field": "role",
+      "kept": "يصمم محتوى الميديا والإعلانات الاحترافية",
+      "discarded": "ينتج الميديا والمحتوى",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "pitch",
+      "field": "color",
+      "kept": "#ffd700",
+      "discarded": "#c9a84c",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "pitch",
+      "field": "role",
+      "kept": "يُعدّ ملفات الإقناع المخصصة لكل مستثمر",
+      "discarded": "ملفات إقناع للمستثمرين",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "outreach",
+      "field": "color",
+      "kept": "#c084fc",
+      "discarded": "#7c5fe6",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "pipelineAgents",
+      "key": "outreach",
+      "field": "role",
+      "kept": "يُطلق حملات التواصل المتزامن عبر القنوات",
+      "discarded": "حملات تواصل متزامنة",
+      "discardedFrom": "shahin-nexus:PIPELINE@L103"
+    },
+    {
+      "dataset": "investorProfiles",
+      "key": "inv-1",
+      "field": "priority",
+      "kept": "عالية جداً",
+      "discarded": "قصوى",
+      "discardedFrom": "shahin-nexus:INVESTORS@L94"
+    },
+    {
+      "dataset": "investorProfiles",
+      "key": "inv-3",
+      "field": "priority",
+      "kept": "عالية جداً",
+      "discarded": "قصوى",
+      "discardedFrom": "shahin-nexus:INVESTORS@L94"
+    },
+    {
+      "dataset": "investorProfiles",
+      "key": "inv-6",
+      "field": "name",
+      "kept": "الشركات العائلية الكبرى",
+      "discarded": "الشركات العائلية",
+      "discardedFrom": "shahin-nexus:INVESTORS@L94"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "gold",
+      "field": "tier",
+      "kept": "الطيف الذهبي",
+      "discarded": "ذهبي",
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "gold",
+      "field": "perks",
+      "kept": [
+        "أولوية الإطلاق",
+        "إحالة 15%",
+        "دخول VIP",
+        "مستشار شخصي"
+      ],
+      "discarded": [
+        "أولوية الإطلاق",
+        "مكافأة إحالة 15%",
+        "دخول VIP"
+      ],
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "gold",
+      "field": "color",
+      "kept": "#c9a84c",
+      "discarded": "#FFD700",
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "silver",
+      "field": "tier",
+      "kept": "الطيف الفضي",
+      "discarded": "فضي",
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "silver",
+      "field": "perks",
+      "kept": [
+        "إحالة 10%",
+        "تنبيهات حصرية",
+        "دخول مبكر"
+      ],
+      "discarded": [
+        "مكافأة إحالة 10%",
+        "تنبيهات حصرية"
+      ],
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "silver",
+      "field": "color",
+      "kept": "#a0b8cc",
+      "discarded": "#C0C0C0",
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "bronze",
+      "field": "tier",
+      "kept": "الطيف البرونزي",
+      "discarded": "برونزي",
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "bronze",
+      "field": "perks",
+      "kept": [
+        "إحالة 5%",
+        "دخول مبكر"
+      ],
+      "discarded": [
+        "مكافأة إحالة 5%",
+        "دخول مبكر"
+      ],
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    },
+    {
+      "dataset": "offerTiers",
+      "key": "bronze",
+      "field": "color",
+      "kept": "#c8825a",
+      "discarded": "#CD7F32",
+      "discardedFrom": "shahin-campaign:OFFER_TEMPLATES@L19"
+    }
+  ],
+  "dropped": [
+    {
+      "ref": "shahin-nexus:steps@L383",
+      "reason": "Scripted \"scan\" that always printed \"النظام سليم 100%\" after fixed delays. Replaced by the kernel's real self-test results."
+    },
+    {
+      "ref": "shaheen-superapp:genHistory / price interval",
+      "reason": "Math.random price series. Kept as a simulation in the shell, labelled as simulated; not stored as data."
+    }
+  ]
+}

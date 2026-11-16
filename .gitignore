@@ -1,2 +1,11 @@
+node_modules/
+dist/
+.vite/
+*.log
+.env
+.env.*
+!.env.example
+graph/.state/
+e2e/artifacts/
 # Google App Engine generated folder
 appengine-generated/

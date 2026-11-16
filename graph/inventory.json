@@ -1,0 +1,814 @@
+{
+  "generatedBy": "scripts/inventory.mjs",
+  "checksums": {
+    "shaheen-superapp.jsx": "21652b2703dca15db6213916e0049f9d97fa5e895cbe8570404ad0e7802e3d57",
+    "shahin-campaign.jsx": "4d13b5f454f5e70bac2fc8efde01ce3881a2f712697ed6fc8e8f0bcf49d5b131",
+    "shahin-green-media.jsx": "17b2c7188c17bae6c3d7c342c416cc5b6d454ca1fd94101bd7b5b55c32302417",
+    "shahin-nexus.jsx": "1542496d33e69c2368e5b75948bf0f358fc489b67176e700d095949d4e525191"
+  },
+  "sources": {
+    "shaheen-superapp": {
+      "file": "sources/shaheen-superapp.jsx",
+      "lines": 1074,
+      "namedConstants": [
+        {
+          "name": "T",
+          "fn": null,
+          "line": 12,
+          "size": 30
+        },
+        {
+          "name": "PAGES",
+          "fn": null,
+          "line": 35,
+          "size": 8
+        },
+        {
+          "name": "ANGELS",
+          "fn": null,
+          "line": 47,
+          "size": 9
+        },
+        {
+          "name": "LAYERS",
+          "fn": null,
+          "line": 59,
+          "size": 7
+        },
+        {
+          "name": "TOKEN_ALLOC",
+          "fn": null,
+          "line": 69,
+          "size": 5
+        },
+        {
+          "name": "PRODUCTS",
+          "fn": null,
+          "line": 77,
+          "size": 12
+        },
+        {
+          "name": "PROPOSALS",
+          "fn": null,
+          "line": 92,
+          "size": 5
+        },
+        {
+          "name": "TREE_DATA",
+          "fn": null,
+          "line": 100,
+          "size": 5
+        },
+        {
+          "name": "CATS",
+          "fn": null,
+          "line": 114,
+          "size": 5
+        },
+        {
+          "name": "arr",
+          "fn": "genHistory",
+          "line": 118,
+          "size": 0
+        },
+        {
+          "name": "live",
+          "fn": "TypeWriter",
+          "line": 172,
+          "size": 1
+        },
+        {
+          "name": "stars",
+          "fn": "StarField",
+          "line": 205,
+          "size": 0
+        },
+        {
+          "name": "cols",
+          "fn": "TreeNode",
+          "line": 234,
+          "size": 4
+        },
+        {
+          "name": "LOG",
+          "fn": "SovereignPage",
+          "line": 586,
+          "size": 8
+        },
+        {
+          "name": "statusCol",
+          "fn": "DaoPage",
+          "line": 776,
+          "size": 4
+        },
+        {
+          "name": "txns",
+          "fn": "WalletPage",
+          "line": 868,
+          "size": 4
+        }
+      ],
+      "inlineLists": [
+        {
+          "fn": "make",
+          "line": 211,
+          "mapParam": null,
+          "size": 4
+        },
+        {
+          "fn": "HomePage",
+          "line": 469,
+          "mapParam": "a",
+          "size": 4
+        },
+        {
+          "fn": "HomePage",
+          "line": 487,
+          "mapParam": null,
+          "size": 4
+        },
+        {
+          "fn": "HomePage",
+          "line": 487,
+          "mapParam": null,
+          "size": 4
+        },
+        {
+          "fn": "MarketPage",
+          "line": 510,
+          "mapParam": null,
+          "size": 2
+        },
+        {
+          "fn": "MarketPage",
+          "line": 563,
+          "mapParam": "[k,v]",
+          "size": 6
+        },
+        {
+          "fn": "SovereignPage",
+          "line": 610,
+          "mapParam": "[v,l,c]",
+          "size": 3
+        },
+        {
+          "fn": "TreePage",
+          "line": 836,
+          "mapParam": "s2",
+          "size": 3
+        },
+        {
+          "fn": "TreePage",
+          "line": 852,
+          "mapParam": "[l,p,d]",
+          "size": 3
+        },
+        {
+          "fn": "WalletPage",
+          "line": 883,
+          "mapParam": "a",
+          "size": 4
+        },
+        {
+          "fn": "WalletPage",
+          "line": 894,
+          "mapParam": "s2",
+          "size": 3
+        },
+        {
+          "fn": "WalletPage",
+          "line": 919,
+          "mapParam": "s2",
+          "size": 3
+        },
+        {
+          "fn": "WalletPage",
+          "line": 925,
+          "mapParam": "f",
+          "size": 3
+        },
+        {
+          "fn": "WalletPage",
+          "line": 969,
+          "mapParam": "s2",
+          "size": 3
+        }
+      ],
+      "features": [
+        {
+          "id": "home",
+          "line": 1044
+        },
+        {
+          "id": "market",
+          "line": 1045
+        },
+        {
+          "id": "sovereign",
+          "line": 1046
+        },
+        {
+          "id": "agents",
+          "line": 1047
+        },
+        {
+          "id": "store",
+          "line": 1048
+        },
+        {
+          "id": "dao",
+          "line": 1049
+        },
+        {
+          "id": "tree",
+          "line": 1050
+        },
+        {
+          "id": "wallet",
+          "line": 1051
+        }
+      ],
+      "aiCallSites": [
+        {
+          "via": "callAngel",
+          "fn": "send",
+          "line": 273,
+          "agentArg": null
+        },
+        {
+          "via": "callAngel",
+          "fn": "launch",
+          "line": 327,
+          "agentArg": null
+        }
+      ],
+      "directApiFetchFromBrowser": 1,
+      "models": [
+        "claude-sonnet-4-20250514"
+      ],
+      "mathRandomCalls": 12,
+      "securityClaimsInUiText": [
+        {
+          "line": 53,
+          "text": "أنت AEGIS حارس الأمن السيبراني. تدقق العقود الذكية وتضمن KYC/AML وAES-256. أجب بالعربية في 100 كلمة."
+        },
+        {
+          "line": 62,
+          "text": "QUANTUM_V12"
+        },
+        {
+          "line": 915,
+          "text": "🏦 الربط البنكي الآمن"
+        },
+        {
+          "line": 952,
+          "text": "🔒 مشفّر AES-256 — تحويل تلقائي خلال 24 ساعة"
+        },
+        {
+          "line": 962,
+          "text": "جارٍ الربط الآمن..."
+        }
+      ]
+    },
+    "shahin-campaign": {
+      "file": "sources/shahin-campaign.jsx",
+      "lines": 673,
+      "namedConstants": [
+        {
+          "name": "TABS",
+          "fn": null,
+          "line": 3,
+          "size": 4
+        },
+        {
+          "name": "PLATFORMS",
+          "fn": null,
+          "line": 10,
+          "size": 6
+        },
+        {
+          "name": "OFFER_TEMPLATES",
+          "fn": null,
+          "line": 19,
+          "size": 3
+        },
+        {
+          "name": "TREE_DATA",
+          "fn": null,
+          "line": 25,
+          "size": 4
+        },
+        {
+          "name": "colors",
+          "fn": "TreeNode",
+          "line": 52,
+          "size": 4
+        }
+      ],
+      "inlineLists": [
+        {
+          "fn": "ShahinCampaign",
+          "line": 92,
+          "mapParam": null,
+          "size": 2
+        },
+        {
+          "fn": "ShahinCampaign",
+          "line": 364,
+          "mapParam": "g",
+          "size": 4
+        },
+        {
+          "fn": "ShahinCampaign",
+          "line": 375,
+          "mapParam": "t",
+          "size": 4
+        },
+        {
+          "fn": "ShahinCampaign",
+          "line": 502,
+          "mapParam": "item",
+          "size": 4
+        },
+        {
+          "fn": "ShahinCampaign",
+          "line": 524,
+          "mapParam": "s",
+          "size": 3
+        },
+        {
+          "fn": "ShahinCampaign",
+          "line": 559,
+          "mapParam": "s",
+          "size": 3
+        },
+        {
+          "fn": "ShahinCampaign",
+          "line": 647,
+          "mapParam": "t",
+          "size": 3
+        }
+      ],
+      "features": [
+        {
+          "id": "campaign",
+          "line": 342
+        },
+        {
+          "id": "offers",
+          "line": 452
+        },
+        {
+          "id": "tree",
+          "line": 519
+        },
+        {
+          "id": "bank",
+          "line": 552
+        }
+      ],
+      "aiCallSites": [
+        {
+          "via": "fetch",
+          "fn": "generateCampaign",
+          "line": 153,
+          "agentArg": null
+        }
+      ],
+      "directApiFetchFromBrowser": 1,
+      "models": [
+        "claude-sonnet-4-20250514"
+      ],
+      "mathRandomCalls": 0,
+      "securityClaimsInUiText": [
+        {
+          "line": 616,
+          "text": "🔒 بياناتك مشفرة بالكامل. ستصل مدفوعاتك تلقائياً خلال 24 ساعة."
+        }
+      ]
+    },
+    "shahin-green-media": {
+      "file": "sources/shahin-green-media.jsx",
+      "lines": 706,
+      "namedConstants": [
+        {
+          "name": "AGENTS",
+          "fn": null,
+          "line": 4,
+          "size": 5
+        },
+        {
+          "name": "SECTORS",
+          "fn": null,
+          "line": 12,
+          "size": 6
+        },
+        {
+          "name": "MEDIA_TYPES",
+          "fn": null,
+          "line": 21,
+          "size": 6
+        },
+        {
+          "name": "INVESTOR_PROFILES",
+          "fn": null,
+          "line": 30,
+          "size": 6
+        },
+        {
+          "name": "colors",
+          "fn": "addLog",
+          "line": 110,
+          "size": 4
+        },
+        {
+          "name": "C",
+          "fn": "ShahinGreenMedia",
+          "line": 245,
+          "size": 10
+        }
+      ],
+      "inlineLists": [
+        {
+          "fn": "ShahinGreenMedia",
+          "line": 94,
+          "mapParam": null,
+          "size": 2
+        },
+        {
+          "fn": "ShahinGreenMedia",
+          "line": 96,
+          "mapParam": null,
+          "size": 2
+        },
+        {
+          "fn": "ShahinGreenMedia",
+          "line": 372,
+          "mapParam": "t",
+          "size": 4
+        }
+      ],
+      "features": [
+        {
+          "id": "studio",
+          "line": 385
+        },
+        {
+          "id": "agents",
+          "line": 468
+        },
+        {
+          "id": "investors",
+          "line": 553
+        },
+        {
+          "id": "results",
+          "line": 623
+        }
+      ],
+      "aiCallSites": [
+        {
+          "via": "callAgent",
+          "fn": "runPipeline",
+          "line": 143,
+          "agentArg": "analyst"
+        },
+        {
+          "via": "callAgent",
+          "fn": "runPipeline",
+          "line": 161,
+          "agentArg": "strategy"
+        },
+        {
+          "via": "callAgent",
+          "fn": "runPipeline",
+          "line": 180,
+          "agentArg": "creative"
+        },
+        {
+          "via": "callAgent",
+          "fn": "runPipeline",
+          "line": 200,
+          "agentArg": "pitch"
+        },
+        {
+          "via": "callAgent",
+          "fn": "runPipeline",
+          "line": 220,
+          "agentArg": "outreach"
+        }
+      ],
+      "directApiFetchFromBrowser": 1,
+      "models": [
+        "claude-sonnet-4-20250514"
+      ],
+      "mathRandomCalls": 7,
+      "securityClaimsInUiText": []
+    },
+    "shahin-nexus": {
+      "file": "sources/shahin-nexus.jsx",
+      "lines": 906,
+      "namedConstants": [
+        {
+          "name": "T",
+          "fn": null,
+          "line": 18,
+          "size": 16
+        },
+        {
+          "name": "TABS",
+          "fn": null,
+          "line": 36,
+          "size": 10
+        },
+        {
+          "name": "PLATFORMS",
+          "fn": null,
+          "line": 50,
+          "size": 6
+        },
+        {
+          "name": "SECTORS",
+          "fn": null,
+          "line": 59,
+          "size": 5
+        },
+        {
+          "name": "MEDIA_TYPES",
+          "fn": null,
+          "line": 67,
+          "size": 4
+        },
+        {
+          "name": "OFFER_TIERS",
+          "fn": null,
+          "line": 74,
+          "size": 3
+        },
+        {
+          "name": "TREE_ROOT",
+          "fn": null,
+          "line": 80,
+          "size": 4
+        },
+        {
+          "name": "INVESTORS",
+          "fn": null,
+          "line": 94,
+          "size": 6
+        },
+        {
+          "name": "PIPELINE",
+          "fn": null,
+          "line": 103,
+          "size": 5
+        },
+        {
+          "name": "DIVISIONS",
+          "fn": null,
+          "line": 111,
+          "size": 5
+        },
+        {
+          "name": "STATS",
+          "fn": null,
+          "line": 139,
+          "size": 6
+        },
+        {
+          "name": "BUGS",
+          "fn": null,
+          "line": 148,
+          "size": 12
+        },
+        {
+          "name": "stars",
+          "fn": "StarField",
+          "line": 172,
+          "size": 0
+        },
+        {
+          "name": "live",
+          "fn": "TypeWriter",
+          "line": 205,
+          "size": 1
+        },
+        {
+          "name": "pal",
+          "fn": "TreeNode",
+          "line": 217,
+          "size": 4
+        },
+        {
+          "name": "cols",
+          "fn": "addLog",
+          "line": 331,
+          "size": 4
+        },
+        {
+          "name": "steps",
+          "fn": "runScan",
+          "line": 383,
+          "size": 8
+        },
+        {
+          "name": "pcts",
+          "fn": "ShahinNexus",
+          "line": 652,
+          "size": 5
+        }
+      ],
+      "inlineLists": [
+        {
+          "fn": "make",
+          "line": 177,
+          "mapParam": null,
+          "size": 3
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 284,
+          "mapParam": null,
+          "size": 2
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 290,
+          "mapParam": null,
+          "size": 2
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 491,
+          "mapParam": "a",
+          "size": 4
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 509,
+          "mapParam": "[v,l]",
+          "size": 3
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 533,
+          "mapParam": "g",
+          "size": 4
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 538,
+          "mapParam": "t",
+          "size": 4
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 671,
+          "mapParam": "s",
+          "size": 3
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 736,
+          "mapParam": "s",
+          "size": 3
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 742,
+          "mapParam": "f",
+          "size": 3
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 790,
+          "mapParam": "s",
+          "size": 3
+        },
+        {
+          "fn": "ShahinNexus",
+          "line": 877,
+          "mapParam": "q",
+          "size": 3
+        }
+      ],
+      "features": [
+        {
+          "id": "dashboard",
+          "line": 459
+        },
+        {
+          "id": "org",
+          "line": 502
+        },
+        {
+          "id": "campaign",
+          "line": 522
+        },
+        {
+          "id": "energy",
+          "line": 572
+        },
+        {
+          "id": "investors",
+          "line": 627
+        },
+        {
+          "id": "tree",
+          "line": 666
+        },
+        {
+          "id": "agents",
+          "line": 688
+        },
+        {
+          "id": "offers",
+          "line": 709
+        },
+        {
+          "id": "bank",
+          "line": 729
+        },
+        {
+          "id": "engineer",
+          "line": 804
+        }
+      ],
+      "aiCallSites": [
+        {
+          "via": "callAI",
+          "fn": "runCampaign",
+          "line": 340,
+          "agentArg": null
+        },
+        {
+          "via": "callAI",
+          "fn": "runPipeline",
+          "line": 356,
+          "agentArg": null
+        },
+        {
+          "via": "callAI",
+          "fn": "runPipeline",
+          "line": 360,
+          "agentArg": null
+        },
+        {
+          "via": "callAI",
+          "fn": "runPipeline",
+          "line": 364,
+          "agentArg": null
+        },
+        {
+          "via": "callAI",
+          "fn": "runPipeline",
+          "line": 368,
+          "agentArg": null
+        },
+        {
+          "via": "callAI",
+          "fn": "runPipeline",
+          "line": 372,
+          "agentArg": null
+        },
+        {
+          "via": "callAI",
+          "fn": "sendMsg",
+          "line": 403,
+          "agentArg": null
+        }
+      ],
+      "directApiFetchFromBrowser": 1,
+      "models": [
+        "claude-sonnet-4-6"
+      ],
+      "mathRandomCalls": 7,
+      "securityClaimsInUiText": [
+        {
+          "line": 134,
+          "text": "تشفير AES-256 ومصادقة"
+        },
+        {
+          "line": 136,
+          "text": "AES-256"
+        },
+        {
+          "line": 732,
+          "text": "🏦 الربط البنكي الآمن"
+        },
+        {
+          "line": 769,
+          "text": "🔒 بياناتك مشفرة بـ AES-256. تحويل تلقائي خلال 24 ساعة."
+        },
+        {
+          "line": 779,
+          "text": "جارٍ الربط الآمن..."
+        },
+        {
+          "line": 854,
+          "text": "✅ الفحص مكتمل — النظام سليم 100%"
+        }
+      ]
+    }
+  }
+}

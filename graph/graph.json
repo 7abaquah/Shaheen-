@@ -1,0 +1,427 @@
+{
+  "version": 1,
+  "task": "Merge the four Shaheen prototypes into one system with a hardened security kernel that uses post-quantum cryptography.",
+  "limit": {
+    "correctionAttemptsPerNode": 3,
+    "passes": 1
+  },
+  "stages": [
+    [
+      "N0"
+    ],
+    [
+      "N1"
+    ],
+    [
+      "N2"
+    ],
+    [
+      "N3",
+      "N4"
+    ],
+    [
+      "N5",
+      "N6",
+      "N7"
+    ],
+    [
+      "N8"
+    ],
+    [
+      "N9"
+    ],
+    [
+      "N10"
+    ]
+  ],
+  "frozen": [
+    "sources/**",
+    "kernel/contract.ts",
+    "kernel/tests/acceptance/**",
+    "server/contract.ts",
+    "server/tests/acceptance/**",
+    "src/contract.ts",
+    "src/modules/registry.ts",
+    "src/tests/setup.ts",
+    "src/tests/acceptance/**",
+    "shared/agents.ts",
+    "shared/catalog.ts",
+    "shared/catalog.json",
+    "shared/release.ts",
+    "server/src/generated/personas.json",
+    "eslint.config.js",
+    "tsconfig.json",
+    "vite.config.ts",
+    "index.html",
+    "package.json",
+    "package-lock.json",
+    "graph/graph.json",
+    "scripts/gate.mjs",
+    "scripts/inventory.mjs",
+    "scripts/build-catalog.mjs"
+  ],
+  "leadOwned": [
+    "graph.md",
+    "checks.md",
+    "progress.md",
+    "README.md",
+    "SECURITY.md",
+    ".gitignore",
+    "graph/**",
+    "scripts/**",
+    "e2e/**",
+    "docs/**"
+  ],
+  "nodes": {
+    "N0": {
+      "title": "Ingest sources, inventory, merge + dedupe data",
+      "kind": "code",
+      "deps": [],
+      "run": [
+        "node scripts/inventory.mjs",
+        "node scripts/build-catalog.mjs"
+      ],
+      "owns": [],
+      "outputs": [
+        "sources/",
+        "graph/inventory.json",
+        "graph/catalog-report.json",
+        "shared/catalog.json",
+        "server/src/generated/personas.json"
+      ]
+    },
+    "N1": {
+      "title": "Contracts, fixed evaluators, tooling, ownership map",
+      "kind": "lead",
+      "deps": [
+        "N0"
+      ],
+      "owns": [],
+      "outputs": [
+        "kernel/contract.ts",
+        "server/contract.ts",
+        "src/contract.ts",
+        "shared/*.ts",
+        "**/tests/acceptance/**",
+        "eslint.config.js",
+        "scripts/gate.mjs",
+        "graph/graph.json",
+        "graph/specs/"
+      ]
+    },
+    "N2": {
+      "title": "Security kernel",
+      "kind": "agent",
+      "spec": "graph/specs/N2-kernel.md",
+      "deps": [
+        "N1"
+      ],
+      "owns": [
+        "kernel/src/**",
+        "kernel/tests/unit/**"
+      ],
+      "typeScope": [
+        "kernel/**"
+      ],
+      "lint": [
+        "kernel"
+      ],
+      "tests": [
+        {
+          "id": "kernel",
+          "paths": [
+            "kernel/tests"
+          ]
+        }
+      ]
+    },
+    "N3": {
+      "title": "AI gateway (server)",
+      "kind": "agent",
+      "spec": "graph/specs/N3-gateway.md",
+      "deps": [
+        "N1",
+        "N2"
+      ],
+      "owns": [
+        "server/src/*.ts",
+        "server/src/agents/**",
+        "server/src/http/**",
+        "server/src/llm/**",
+        "server/tests/unit/**"
+      ],
+      "typeScope": [
+        "server/**"
+      ],
+      "lint": [
+        "server"
+      ],
+      "tests": [
+        {
+          "id": "gateway",
+          "paths": [
+            "server/tests"
+          ]
+        }
+      ]
+    },
+    "N4": {
+      "title": "Shell, UI kit, kernel bootstrap",
+      "kind": "agent",
+      "spec": "graph/specs/N4-shell.md",
+      "deps": [
+        "N1",
+        "N2"
+      ],
+      "owns": [
+        "src/main.tsx",
+        "src/App.tsx",
+        "src/styles.css",
+        "src/shell/**",
+        "src/ui/**"
+      ],
+      "typeScope": [
+        "src/main.tsx",
+        "src/App.tsx",
+        "src/shell/**",
+        "src/ui/**",
+        "src/tests/acceptance/shell.test.tsx"
+      ],
+      "lint": [
+        "src/main.tsx",
+        "src/App.tsx",
+        "src/shell",
+        "src/ui"
+      ],
+      "tests": [
+        {
+          "id": "shell",
+          "paths": [
+            "src/tests/acceptance/shell.test.tsx"
+          ]
+        }
+      ]
+    },
+    "N5": {
+      "title": "Modules: campaign, studio, investors",
+      "kind": "agent",
+      "spec": "graph/specs/N5-modules-growth.md",
+      "deps": [
+        "N2",
+        "N4"
+      ],
+      "owns": [
+        "src/modules/campaign/**",
+        "src/modules/studio/**",
+        "src/modules/investors/**"
+      ],
+      "typeScope": [
+        "src/modules/campaign/**",
+        "src/modules/studio/**",
+        "src/modules/investors/**"
+      ],
+      "lint": [
+        "src/modules/campaign",
+        "src/modules/studio",
+        "src/modules/investors"
+      ],
+      "tests": [
+        {
+          "id": "modules",
+          "paths": [
+            "src/tests/acceptance/modules.test.tsx"
+          ],
+          "name": "module: (campaign|studio|investors) "
+        }
+      ]
+    },
+    "N6": {
+      "title": "Modules: home, market, sovereign, angels, store, dao",
+      "kind": "agent",
+      "spec": "graph/specs/N6-modules-superapp.md",
+      "deps": [
+        "N2",
+        "N4"
+      ],
+      "owns": [
+        "src/modules/home/**",
+        "src/modules/market/**",
+        "src/modules/sovereign/**",
+        "src/modules/angels/**",
+        "src/modules/store/**",
+        "src/modules/dao/**"
+      ],
+      "typeScope": [
+        "src/modules/home/**",
+        "src/modules/market/**",
+        "src/modules/sovereign/**",
+        "src/modules/angels/**",
+        "src/modules/store/**",
+        "src/modules/dao/**"
+      ],
+      "lint": [
+        "src/modules/home",
+        "src/modules/market",
+        "src/modules/sovereign",
+        "src/modules/angels",
+        "src/modules/store",
+        "src/modules/dao"
+      ],
+      "tests": [
+        {
+          "id": "modules",
+          "paths": [
+            "src/tests/acceptance/modules.test.tsx"
+          ],
+          "name": "module: (home|market|sovereign|angels|store|dao) "
+        }
+      ]
+    },
+    "N7": {
+      "title": "Modules: org, tree, offers, wallet, engineer, security",
+      "kind": "agent",
+      "spec": "graph/specs/N7-modules-system.md",
+      "deps": [
+        "N2",
+        "N4"
+      ],
+      "owns": [
+        "src/modules/org/**",
+        "src/modules/tree/**",
+        "src/modules/offers/**",
+        "src/modules/wallet/**",
+        "src/modules/engineer/**",
+        "src/modules/security/**"
+      ],
+      "typeScope": [
+        "src/modules/org/**",
+        "src/modules/tree/**",
+        "src/modules/offers/**",
+        "src/modules/wallet/**",
+        "src/modules/engineer/**",
+        "src/modules/security/**"
+      ],
+      "lint": [
+        "src/modules/org",
+        "src/modules/tree",
+        "src/modules/offers",
+        "src/modules/wallet",
+        "src/modules/engineer",
+        "src/modules/security"
+      ],
+      "tests": [
+        {
+          "id": "modules",
+          "paths": [
+            "src/tests/acceptance/modules.test.tsx"
+          ],
+          "name": "module: (org|tree|offers|wallet|engineer|security) "
+        }
+      ]
+    },
+    "N8": {
+      "title": "Integration: whole-repo checks, build, signed release, scans",
+      "kind": "code",
+      "deps": [
+        "N2",
+        "N3",
+        "N4",
+        "N5",
+        "N6",
+        "N7"
+      ],
+      "owns": [],
+      "typeScope": [
+        "**"
+      ],
+      "lint": [
+        "."
+      ],
+      "tests": [
+        {
+          "id": "all",
+          "paths": []
+        }
+      ],
+      "extra": [
+        {
+          "id": "build",
+          "cmd": [
+            "npm",
+            "run",
+            "build"
+          ]
+        },
+        {
+          "id": "scan",
+          "cmd": [
+            "node",
+            "scripts/scan-security.mjs"
+          ]
+        },
+        {
+          "id": "coverage",
+          "cmd": [
+            "node",
+            "scripts/coverage.mjs"
+          ]
+        },
+        {
+          "id": "audit",
+          "cmd": [
+            "npm",
+            "audit",
+            "--omit=dev",
+            "--audit-level=high"
+          ]
+        }
+      ]
+    },
+    "N9": {
+      "title": "Independent security review (read-only) of kernel + gateway + shell",
+      "kind": "agent",
+      "spec": "graph/specs/N9-review.md",
+      "deps": [
+        "N8"
+      ],
+      "owns": [
+        "graph/review/**"
+      ],
+      "extra": [
+        {
+          "id": "findings",
+          "cmd": [
+            "node",
+            "scripts/review-status.mjs"
+          ]
+        }
+      ]
+    },
+    "N10": {
+      "title": "End-to-end run in a real browser, verification report",
+      "kind": "code",
+      "deps": [
+        "N8",
+        "N9"
+      ],
+      "owns": [],
+      "extra": [
+        {
+          "id": "e2e",
+          "cmd": [
+            "node",
+            "e2e/run.mjs"
+          ]
+        },
+        {
+          "id": "report",
+          "cmd": [
+            "node",
+            "scripts/verify.mjs",
+            "--report-only"
+          ]
+        }
+      ]
+    }
+  }
+}
