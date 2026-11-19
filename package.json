@@ -1,0 +1,52 @@
+{
+  "name": "shaheen-quantum",
+  "private": true,
+  "version": "1.0.0",
+  "description": "منظومة شاهين الموحّدة — نواة أمان بتشفير ما بعد الكم + بوابة ذكاء اصطناعي + واجهة موحّدة",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "SHAHEEN_AI_MODE=mock node server/src/main.ts",
+    "build": "vite build && node scripts/sign-release.mjs",
+    "start": "node server/src/main.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "inventory": "node scripts/inventory.mjs",
+    "scan": "node scripts/scan-security.mjs",
+    "coverage:sources": "node scripts/coverage.mjs",
+    "gate": "node scripts/gate.mjs",
+    "e2e": "node e2e/run.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "@fontsource/cairo": "^5.3.0",
+    "@fontsource/noto-kufi-arabic": "^5.3.0",
+    "@noble/post-quantum": "^0.7.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "acorn": "^8.19.0",
+    "acorn-jsx": "^5.3.2",
+    "eslint": "^10.15.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^16.0.0",
+    "jsdom": "^31.0.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  }
+}
