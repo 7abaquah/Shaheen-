@@ -1,0 +1,82 @@
+# نشر تطبيق الويب (PWA) على GitHub Pages، والموقع والخادم على Cloudflare عند توفر الأسرار
+# ملفات الإصدار (PWA و Android و iOS) تُرفق من release.yml
+name: deploy
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency: { group: deploy, cancel-in-progress: false }
+defaults:
+  run:
+    shell: bash
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+  app:
+    needs: checks
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: app } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: app/package-lock.json }
+      - run: npm ci
+      - run: npm run build
+        env:
+          SHN_API_BASE: ${{ vars.SHN_API_BASE }}
+          SHN_TURNSTILE_SITE_KEY: ${{ vars.SHN_TURNSTILE_SITE_KEY }}
+          SHN_WEBSITE_URL: ${{ vars.SHN_WEBSITE_URL }}
+          SHN_APP_URL: ${{ vars.SHN_APP_URL }}
+          SHN_PRESALE_ENABLED: ${{ vars.SHN_PRESALE_ENABLED }}
+      # الإرفاق بالإصدار يتم في release.yml؛ هنا النشر على Pages من الفرع الرئيسي فقط
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
+        with: { path: app/dist/pwa }
+  pages:
+    # يتطلب تفعيل Pages بمصدر «GitHub Actions» من إعدادات المستودع
+    needs: app
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: '${{ steps.d.outputs.page_url }}' }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4
+  web:
+    needs: checks
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure website from repository variables
+        env:
+          SHN_API_BASE: ${{ vars.SHN_API_BASE }}
+          SHN_APP_URL: ${{ vars.SHN_APP_URL }}
+          SHN_WEBSITE_URL: ${{ vars.SHN_WEBSITE_URL }}
+          SHN_TURNSTILE_SITE_KEY: ${{ vars.SHN_TURNSTILE_SITE_KEY }}
+        run: node .github/scripts/configure-web.mjs web
+      - name: Deploy website to Cloudflare Pages
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
+        run: npx --yes wrangler@3.114.0 pages deploy web --project-name "${{ vars.CF_PAGES_PROJECT || 'shaheen-web' }}" --branch main
+  api:
+    needs: checks
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: api } }
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply migrations and deploy Worker
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
+        run: |
+          npx --yes wrangler@3.114.0 d1 migrations apply DB --remote
+          npx --yes wrangler@3.114.0 deploy

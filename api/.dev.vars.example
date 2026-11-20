@@ -1,0 +1,5 @@
+# Copy to .dev.vars for `npx wrangler dev` (local Workers runtime). Do not commit .dev.vars.
+TURNSTILE_DISABLED=1
+ADMIN_TOKEN=replace-with-at-least-32-random-characters-xxxx
+IP_SALT=local-dev-salt-not-for-production
+ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,https://localhost,capacitor://localhost

@@ -1,0 +1,16 @@
+<!-- @dsCard group="العلامة" height=200 subtitle="الشعار الرسمي بنسخه" -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Cairo:wght@600;700;800&family=Tajawal:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>body{margin:0;background:var(--surface-100);color:var(--text);font-family:var(--font-body)} #root{padding:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var h = React.createElement, S = window.Shaheen;
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment,null,h('div',{style:{background:'var(--ink)',padding:16,borderRadius:'var(--radius-lg)'}},h(S.Logo,{size:150})),h(S.Logo,{variant:'mark',size:90}),h(S.Logo,{variant:'mark',tone:'gold',size:60}),h(S.Logo,{variant:'word',size:46})));
+</script>
+</body>
+</html>

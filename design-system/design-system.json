@@ -1,0 +1,203 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-20T18:10:29Z"
+ },
+ "title": "هوية شاهين",
+ "namespace": "Shaheen",
+ "libraries": [
+  {
+   "name": "react",
+   "version": "18.3.1"
+  },
+  {
+   "name": "react-dom",
+   "version": "18.3.1"
+  }
+ ],
+ "sections": {},
+ "groups": [
+  "Logos",
+  "App icons",
+  "Motifs"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "l",
+   "order": [
+    "shaheen-logo-master.jpg",
+    "shaheen-logo.svg",
+    "shaheen-logo-on-black.svg",
+    "shaheen-mark.svg",
+    "shaheen-wordmark.svg",
+    "shaheen-logo-gold-flat.svg",
+    "shaheen-logo-black.svg",
+    "shaheen-logo-white.svg",
+    "shaheen-mark-flat.svg",
+    "shaheen-logo-1024-black.png",
+    "shaheen-logo-1024-transparent.png"
+   ],
+   "files": {
+    "shaheen-logo-master.jpg": {
+     "name": "shaheen-logo-master.jpg",
+     "blob": "aa0f8bcc5e8d48f707a59db3a1001b84",
+     "size": 26506,
+     "type": "image/jpeg"
+    },
+    "shaheen-logo.svg": {
+     "name": "shaheen-logo.svg",
+     "blob": "24511426366189d9eada42ed31276c4b",
+     "size": 20832,
+     "type": "image/svg+xml"
+    },
+    "shaheen-logo-on-black.svg": {
+     "name": "shaheen-logo-on-black.svg",
+     "blob": "ae7c8d20cf04b67f8942e311b61f4cab",
+     "size": 20897,
+     "type": "image/svg+xml"
+    },
+    "shaheen-mark.svg": {
+     "name": "shaheen-mark.svg",
+     "blob": "ed9cf7d2d38b47498dcb693ff08ef662",
+     "size": 14309,
+     "type": "image/svg+xml"
+    },
+    "shaheen-wordmark.svg": {
+     "name": "shaheen-wordmark.svg",
+     "blob": "0a3e57f75ab61a32f31b0c082bdad40b",
+     "size": 7082,
+     "type": "image/svg+xml"
+    },
+    "shaheen-logo-gold-flat.svg": {
+     "name": "shaheen-logo-gold-flat.svg",
+     "blob": "a903f2e76be0d745a8f3f1f38ad52c2e",
+     "size": 20479,
+     "type": "image/svg+xml"
+    },
+    "shaheen-logo-black.svg": {
+     "name": "shaheen-logo-black.svg",
+     "blob": "ebfdce9956134dd6751d8bdca83228f9",
+     "size": 20479,
+     "type": "image/svg+xml"
+    },
+    "shaheen-logo-white.svg": {
+     "name": "shaheen-logo-white.svg",
+     "blob": "88b635b6b10641941e0bc315669f90a2",
+     "size": 20479,
+     "type": "image/svg+xml"
+    },
+    "shaheen-mark-flat.svg": {
+     "name": "shaheen-mark-flat.svg",
+     "blob": "d46a22d8bbf6d763caed585628832160",
+     "size": 13956,
+     "type": "image/svg+xml"
+    },
+    "shaheen-logo-1024-black.png": {
+     "name": "shaheen-logo-1024-black.png",
+     "blob": "931b1ce534832c9c20ab1bb2a998ba77",
+     "size": 285480,
+     "type": "image/png"
+    },
+    "shaheen-logo-1024-transparent.png": {
+     "name": "shaheen-logo-1024-transparent.png",
+     "blob": "d10972723e2f4d7a19cc55ade1d82959",
+     "size": 428320,
+     "type": "image/png"
+    }
+   }
+  },
+  "App icons": {
+   "name": "App icons",
+   "tile": "m",
+   "order": [
+    "icon-512.png",
+    "maskable-512.png",
+    "icon-192.png",
+    "apple-touch-icon.png",
+    "favicon-64.png"
+   ],
+   "files": {
+    "icon-512.png": {
+     "name": "icon-512.png",
+     "blob": "b272888651ff07fc801260c8e9f66b7c",
+     "size": 81082,
+     "type": "image/png"
+    },
+    "maskable-512.png": {
+     "name": "maskable-512.png",
+     "blob": "4a53038abe05cb5c8ff23e501f0f0aa6",
+     "size": 50802,
+     "type": "image/png"
+    },
+    "icon-192.png": {
+     "name": "icon-192.png",
+     "blob": "7fe097e552f3dbfd941844cb6abc55ce",
+     "size": 16009,
+     "type": "image/png"
+    },
+    "apple-touch-icon.png": {
+     "name": "apple-touch-icon.png",
+     "blob": "b1668eca5c86a615a25347a90abbd2a0",
+     "size": 13219,
+     "type": "image/png"
+    },
+    "favicon-64.png": {
+     "name": "favicon-64.png",
+     "blob": "1347e5bb9abc054589bc5e0f7d8af8f3",
+     "size": 3831,
+     "type": "image/png"
+    }
+   }
+  },
+  "Motifs": {
+   "name": "Motifs",
+   "tile": "m",
+   "order": [
+    "motif-talon.svg",
+    "motif-talon-side.svg",
+    "pattern-talon.svg",
+    "pattern-feather.svg"
+   ],
+   "files": {
+    "motif-talon.svg": {
+     "name": "motif-talon.svg",
+     "blob": "9ec38852282dfa6383394e2f2bf445ee",
+     "size": 1912,
+     "type": "image/svg+xml"
+    },
+    "motif-talon-side.svg": {
+     "name": "motif-talon-side.svg",
+     "blob": "5f9bab9b58081518ff262af979436d9b",
+     "size": 2907,
+     "type": "image/svg+xml"
+    },
+    "pattern-talon.svg": {
+     "name": "pattern-talon.svg",
+     "blob": "34c4cd97d3569ea31b48883078a90351",
+     "size": 2089,
+     "type": "image/svg+xml"
+    },
+    "pattern-feather.svg": {
+     "name": "pattern-feather.svg",
+     "blob": "957af65fb0850a4be3e911b9761ed861",
+     "size": 434,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Abdullah Shaheen",
+  "at": "2026-11-20T18:10:29Z",
+  "via": "Claude",
+  "note": "إنشاء الهوية من الشعار الرسمي"
+ }
+}

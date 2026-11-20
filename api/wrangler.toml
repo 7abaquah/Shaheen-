@@ -1,0 +1,30 @@
+# Shaheen API v1 — Cloudflare Worker configuration
+name = "shaheen-api"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# Optional: serve on a custom domain, e.g. https://api.your-domain.sa/v1
+# routes = [{ pattern = "api.your-domain.sa", custom_domain = true }]
+
+[observability]
+enabled = true
+
+# Public (non-secret) configuration.
+# ALLOWED_ORIGINS: exact origins, comma-separated (scheme://host[:port], no path, no trailing slash).
+# Replace https://shaheen.example with the real website origin(s). The two mobile origins are
+# required by the Capacitor app: https://localhost (Android) and capacitor://localhost (iOS).
+[vars]
+ALLOWED_ORIGINS = "https://shaheen.example,https://www.shaheen.example,https://localhost,capacitor://localhost"
+CONSENT_VERSION = "2026-11"
+# Never set TURNSTILE_DISABLED here. It exists only for local development.
+
+[[d1_databases]]
+binding = "DB"
+database_name = "shaheen-db"
+database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"
+migrations_dir = "migrations"
+
+# Secrets (set with `npx wrangler secret put <NAME>`; never commit them):
+#   TURNSTILE_SECRET  Cloudflare Turnstile secret key for the widget used by the website and app
+#   ADMIN_TOKEN       random string, at least 32 characters (shorter = every admin call returns 401)
+#   IP_SALT           random string, at least 16 characters, used to hash client IPs (SHA-256)

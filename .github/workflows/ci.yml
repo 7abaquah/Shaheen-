@@ -1,0 +1,54 @@
+# فحص شامل عند كل دفع أو طلب دمج: التطبيق، الخادم، الموقع، العقود
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  app:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: app } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: app/package-lock.json }
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+  api:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: api } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+      - run: npm test
+  web:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: web } }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Security lint (no inline script, handlers, styles or innerHTML)
+        run: |
+          set -e
+          ! grep -rnE 'innerHTML|outerHTML|insertAdjacentHTML|document\.write' --include='*.js' --include='*.html' . || { echo 'unsafe DOM sink'; exit 1; }
+          ! grep -rnE '\son[a-z]+="' --include='*.html' . || { echo 'inline handler'; exit 1; }
+          ! grep -rnE 'style="' --include='*.html' . || { echo 'inline style'; exit 1; }
+          ! grep -rnP '<script(?![^>]*\bsrc=)(?![^>]*application/ld\+json)[^>]*>' --include='*.html' . || { echo 'inline script'; exit 1; }
+          test -f _headers && grep -q 'Content-Security-Policy' _headers
+          test -f .well-known/security.txt
+          echo 'web security lint ok'
+  contracts:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: contracts } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: contracts/package-lock.json }
+      - run: npm ci
+      - run: npx hardhat compile
+      - run: npm test

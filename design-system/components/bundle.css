@@ -1,0 +1,43 @@
+/* مكونات شاهين — تُبنى على tokens.css */
+.shn-logo { display: block; width: auto; max-width: 100%; }
+.shn-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: 44px; padding: 0 var(--space-5); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: 15px; font-weight: 800; border: 1px solid transparent; cursor: pointer; transition: filter .15s, background-color .15s; }
+.shn-btn:focus-visible, .shn-toggle:focus-visible, .shn-input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.shn-btn:disabled { opacity: .45; cursor: not-allowed; }
+.shn-btn--gold { background: linear-gradient(135deg, #F7B649 0%, #EFA22C 42%, #F8BA4E 50%, #E99C27 58%, #B9741A 100%); color: var(--on-gold); box-shadow: var(--glow-gold); }
+.shn-btn--gold:hover:not(:disabled) { filter: brightness(1.06); }
+.shn-btn--ghost { background: transparent; border-color: var(--gold-700); color: var(--accent-text); }
+.shn-btn--ghost:hover:not(:disabled) { background: var(--line); }
+.shn-btn--quiet { background: transparent; border-color: var(--line); color: var(--text); }
+.shn-btn--danger { background: transparent; border-color: var(--danger); color: var(--danger); }
+.shn-card { min-width: 0; background: var(--surface-200); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-5); color: var(--text); font-family: var(--font-body); }
+.shn-card__head { margin-bottom: var(--space-4); }
+.shn-card__title { margin: 0; font-family: var(--font-sans); font-size: 20px; line-height: 1.45; font-weight: 700; color: var(--text); }
+.shn-card__hint { margin: var(--space-1) 0 0; font-size: 13px; line-height: 1.7; color: var(--text-muted); }
+.shn-stat { min-width: 0; background: var(--surface-200); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-3) var(--space-4); }
+.shn-stat__label { font-family: var(--font-body); font-size: 12px; font-weight: 700; color: var(--text-muted); }
+.shn-stat__value { margin-top: var(--space-1); font-family: var(--font-sans); font-size: 22px; font-weight: 800; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+.shn-stat__value.is-success { color: var(--success); } .shn-stat__value.is-danger { color: var(--danger); } .shn-stat__value.is-info { color: var(--info); } .shn-stat__value.is-text { color: var(--text); }
+.shn-stat__sub { font-family: var(--font-body); font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.shn-pill { display: inline-flex; align-items: center; gap: var(--space-1); padding: 2px 10px; border-radius: var(--radius-pill); border: 1px solid currentColor; font-family: var(--font-body); font-size: 12px; font-weight: 700; }
+.shn-pill--success { color: var(--success); } .shn-pill--danger { color: var(--danger); } .shn-pill--info { color: var(--info); } .shn-pill--gold { color: var(--accent-text); } .shn-pill--neutral { color: var(--text-muted); }
+.shn-notice { border-radius: var(--radius-md); border: 1px solid var(--line); padding: var(--space-3) var(--space-4); font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: var(--text); background: var(--surface-200); }
+.shn-notice--info { border-color: var(--gold-700); }
+.shn-notice--ok { border-color: var(--success); } .shn-notice--warn { border-color: var(--gold-500); } .shn-notice--err { border-color: var(--danger); }
+.shn-notice--ok::before { content: "✓ "; color: var(--success); font-weight: 800; }
+.shn-notice--err::before { content: "! "; color: var(--danger); font-weight: 800; }
+.shn-toggle { position: relative; width: 46px; height: 26px; border-radius: var(--radius-pill); border: 1px solid var(--line); background: var(--surface-100); cursor: pointer; padding: 0; }
+.shn-toggle.is-on { background: var(--gold-500); border-color: var(--gold-500); }
+.shn-toggle__knob { position: absolute; top: 3px; right: 23px; width: 18px; height: 18px; border-radius: 50%; background: var(--text-muted); transition: right .15s, background-color .15s; }
+.shn-toggle.is-on .shn-toggle__knob { right: 3px; background: var(--on-gold); }
+.shn-field { min-width: 0; display: grid; gap: 6px; }
+.shn-field__label { font-family: var(--font-body); font-size: 12px; font-weight: 700; color: var(--text-muted); }
+.shn-input { width: 100%; box-sizing: border-box; min-height: 44px; padding: 0 var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-100); color: var(--text); font-family: var(--font-body); font-size: 15px; }
+.shn-input.is-ltr { direction: ltr; text-align: left; font-family: var(--font-mono); font-size: 13px; }
+.shn-input.is-invalid { border-color: var(--danger); }
+.shn-field__hint { margin: 0; font-family: var(--font-body); font-size: 12px; color: var(--text-muted); }
+.shn-field__hint.is-invalid { color: var(--danger); }
+.shn-progress { height: 8px; border-radius: var(--radius-pill); background: var(--line); overflow: hidden; }
+.shn-progress__bar { height: 100%; border-radius: inherit; background: linear-gradient(270deg, #F7B649, #B9741A); }
+.shn-progress__bar.is-success { background: var(--success); }
+.shn-divider { display: flex; align-items: center; gap: var(--space-3); }
+.shn-divider__line { flex: 1; height: 1px; background: var(--line); }

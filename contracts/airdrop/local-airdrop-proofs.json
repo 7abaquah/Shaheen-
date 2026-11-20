@@ -1,0 +1,14 @@
+{
+  "root": "0x63e0524d75f83501fd5713fe7307d52e8321bc1ffb55ac331826326a87a8d2a8",
+  "amount": "1000",
+  "amountWei": "1000000000000000000000",
+  "count": 2,
+  "proofs": {
+    "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc": [
+      "0x0ef505bd1bb5bf1d4c8000a04ee2be96962fdb1de90a986bfc0dc1296f10b676"
+    ],
+    "0x90f79bf6eb2c4f870365e785982e1f101e93b906": [
+      "0x565e58f63f65fe562642397e7d909c63d2935aae0307c16f26bb1c08cab5b1cc"
+    ]
+  }
+}

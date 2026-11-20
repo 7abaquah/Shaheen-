@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الأمان والإفصاح المسؤول | شاهين</title>
+<meta name="description" content="كيف تبلغ شاهين عن ثغرة أمنية، وما نطبقه لحماية الموقع والمستخدمين.">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://shaheen.example/security/">
+<link rel="alternate" hreflang="ar" href="https://shaheen.example/security/">
+<link rel="alternate" hreflang="en" href="https://shaheen.example/en/security/">
+<link rel="alternate" hreflang="x-default" href="https://shaheen.example/security/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="شاهين">
+<meta property="og:title" content="الأمان والإفصاح المسؤول">
+<meta property="og:description" content="كيف تبلغ شاهين عن ثغرة أمنية، وما نطبقه لحماية الموقع والمستخدمين.">
+<meta property="og:url" content="https://shaheen.example/security/">
+<meta property="og:image" content="https://shaheen.example/assets/brand/shaheen-logo-1024-black.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:alt" content="شعار شاهين">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/brand/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Cairo:wght@600;700;800&family=Tajawal:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/site.css">
+<script src="/js/config.js" defer></script>
+<script src="/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand-link" href="/" aria-label="شاهين — الصفحة الرئيسية"><img src="/assets/brand/shaheen-mark.svg" alt="" width="43" height="40"></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav"><svg class="" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-menu"></use></svg><span>القائمة</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="القائمة الرئيسية">
+      <ul>
+        <li><a class="nav-link" href="/">الرئيسية</a></li><li><a class="nav-link" href="/token/">عملة SHN</a></li><li><a class="nav-link" href="/subscribe/">الاشتراك والخطط</a></li><li><a class="nav-link" href="/investors/">المستثمرون</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="lang-link" href="/en/security/" hreflang="en" lang="en">English</a>
+        <a class="btn btn--ghost btn--sm" href="/#download" data-app-link>فتح التطبيق</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">الأمان</span>
+    <h1>الأمان والإفصاح المسؤول</h1>
+    <p>نرحب بتقارير الباحثين الأمنيين ونتعامل معها بجدية وسرية.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <nav class="toc" aria-label="محتويات الصفحة"><ol><li><a href="#report">الإبلاغ عن ثغرة</a></li><li><a href="#scope">النطاق</a></li><li><a href="#out">خارج النطاق</a></li><li><a href="#rules">قواعد الاختبار</a></li><li><a href="#commit">التزامنا</a></li><li><a href="#site">ما نطبقه في هذا الموقع</a></li><li><a href="#protect">احمِ نفسك</a></li></ol></nav>
+    <div class="prose">
+<h2 id="report">الإبلاغ عن ثغرة</h2>
+<p>إذا اكتشفت ثغرة أمنية في أنظمة شاهين فنرجو إبلاغنا بها بسرية قبل أي إفصاح علني.</p>
+<p>بريد الإبلاغ: <span class="tbd">[قيد القرار]</span> — وتجد بيانات التواصل المعتمدة دائمًا في الملف <a href="/.well-known/security.txt" dir="ltr">/.well-known/security.txt</a>.</p>
+<p>ضمّن في البلاغ:</p>
+<ul><li>وصف الثغرة وأثرها المحتمل.</li><li>الرابط أو المكون أو العقد المتأثر.</li><li>خطوات إعادة إنتاجها، مع إثبات مختصر إن أمكن.</li><li>وسيلة للتواصل معك.</li></ul>
+<h2 id="scope">النطاق</h2>
+<ul class="talon-list">
+<li>هذا الموقع.</li><li>الواجهة البرمجية (API) التي تستقبل النماذج.</li><li>تطبيق الويب (PWA).</li><li>العقود الذكية لعملة SHN بعد نشر عناوينها الرسمية.</li>
+</ul>
+<h2 id="out">خارج النطاق</h2>
+<ul>
+<li>هجمات حجب الخدمة (DoS/DDoS) أو أي اختبار يثقل الأنظمة.</li>
+<li>الهندسة الاجتماعية والتصيد ضد الموظفين أو المستخدمين، والاختبارات المادية.</li>
+<li>إرسال كميات كبيرة من النماذج أو الرسائل المزعجة.</li>
+<li>نتائج أدوات الفحص الآلي دون إثبات أثر فعلي.</li>
+<li>ثغرات خدمات الطرف الثالث مثل Cloudflare وGoogle؛ أبلغ مزوديها مباشرة.</li>
+</ul>
+<h2 id="rules">قواعد الاختبار</h2>
+<ul>
+<li>لا تطّلع على بيانات الآخرين ولا تعدّلها ولا تحذفها، واستخدم بيانات اختبار من إنشائك فقط.</li>
+<li>إذا وصلت إلى بيانات شخصية دون قصد فتوقف فورًا وأبلغنا ولا تحتفظ بنسخة منها.</li>
+<li>لا تستغل الثغرة أكثر مما يلزم لإثباتها.</li>
+<li>لا تفصح عن الثغرة علنًا قبل إصلاحها والاتفاق معنا على موعد الإفصاح.</li>
+</ul>
+<h2 id="commit">التزامنا</h2>
+<ul>
+<li>نؤكد استلام البلاغ ونطلعك على مراحل معالجته. مدد الاستجابة والإصلاح: <span class="tbd">[قيد القرار]</span></li>
+<li>لن نتخذ إجراءً ضد من يلتزم بهذه القواعد بحسن نية.</li>
+<li>برنامج مكافآت الثغرات: <span class="tbd">[قيد القرار]</span></li>
+</ul>
+<h2 id="site">ما نطبقه في هذا الموقع</h2>
+<ul class="talon-list">
+<li>اتصال مشفّر إلزامي (HTTPS مع HSTS).</li>
+<li>سياسة أمان محتوى (CSP) صارمة تمنع تشغيل أي نص برمجي غير معتمد.</li>
+<li>لا أدوات تتبع ولا إعلانات، ولا تخزين لبيانات النماذج في المتصفح.</li>
+<li>تحقق Cloudflare Turnstile وحد لعدد المحاولات على كل نموذج.</li>
+<li>لا يقبل الموقع أي أموال.</li>
+</ul>
+<h2 id="protect">احمِ نفسك</h2>
+<ul>
+<li>لن نطلب منك أبدًا عبارة الاسترداد (Seed phrase) أو المفتاح الخاص لمحفظتك.</li>
+<li>عناوين العقود الرسمية تُنشر في هذا الموقع فقط بعد الإطلاق؛ أي عنوان يُتداول قبل ذلك ليس رسميًا.</li>
+<li>لا نطلب تحويلات عبر الرسائل الخاصة أو وسائل التواصل الاجتماعي.</li>
+<li>تحقق من اسم النطاق في شريط العنوان قبل إدخال أي بيانات.</li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <img class="footer-mark" src="/assets/brand/shaheen-mark.svg" alt="شاهين" width="51" height="48">
+    <div>
+      <nav aria-label="روابط التذييل"><ul class="footer-links"><li><a href="/token/">عملة SHN</a></li><li><a href="/privacy/">سياسة الخصوصية</a></li><li><a href="/terms/">شروط الاستخدام</a></li><li><a href="/security/">الأمان والإفصاح المسؤول</a></li></ul></nav>
+      <p class="disclaimer">الأصول الرقمية عالية المخاطر. ليس نصيحة استثمارية.</p>
+      <p class="caption">عناوين العقود الرسمية: <span class="tbd">[تُنشر بعد الإطلاق]</span></p>
+      <p class="caption">© 2026 شاهين. جميع الحقوق محفوظة.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

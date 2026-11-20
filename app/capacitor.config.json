@@ -1,0 +1,18 @@
+{
+  "appId": "sa.shaheen.app",
+  "appName": "شاهين",
+  "webDir": "dist/pwa",
+  "backgroundColor": "#070502",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  },
+  "ios": {
+    "contentInset": "never",
+    "limitsNavigationsToAppBoundDomains": false
+  }
+}

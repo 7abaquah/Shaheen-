@@ -1,0 +1,36 @@
+{
+  "name": "shaheen-platform",
+  "version": "3.4.0",
+  "private": true,
+  "description": "منظومة شاهين المتكاملة — SHN (BEP-20) PWA",
+  "scripts": {
+    "build:css": "tailwindcss -i src/index.css -o dist/app.css --minify",
+    "build:js": "esbuild src/main.jsx --bundle --minify --format=iife --target=es2020 --jsx=automatic --loader:.js=jsx --define:process.env.NODE_ENV='\"production\"' --outfile=dist/app.js",
+    "build": "npm run build:css && npm run build:js && node scripts/assemble.mjs",
+    "check": "esbuild src/main.jsx --bundle --jsx=automatic --outfile=/dev/null",
+    "test": "node --test test/*.test.mjs",
+    "mobile:assets": "capacitor-assets generate --iconBackgroundColor '#070502' --iconBackgroundColorDark '#070502' --splashBackgroundColor '#070502' --splashBackgroundColorDark '#070502'",
+    "mobile:add:android": "cap add android",
+    "mobile:add:ios": "cap add ios",
+    "mobile:sync": "npm run build && cap sync"
+  },
+  "dependencies": {
+    "lucide-react": "0.441.0",
+    "qrcode-generator": "1.4.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "viem": "^2.21.32",
+    "@capacitor/core": "8.6.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.23.1",
+    "tailwindcss": "3.4.17",
+    "@capacitor/cli": "8.6.0",
+    "@capacitor/android": "8.6.0",
+    "@capacitor/ios": "8.6.0",
+    "@capacitor/assets": "3.0.5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

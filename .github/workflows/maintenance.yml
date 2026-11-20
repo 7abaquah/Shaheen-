@@ -1,0 +1,67 @@
+# وحدة الصيانة الدورية: يوميًا الساعة 02:17 صباحًا بتوقيت مكة (23:17 UTC من اليوم السابق)
+# ملاحظة: GitHub قد يؤخر التشغيل المجدول دقائق في أوقات الذروة.
+# تعيد تشغيل كل الاختبارات والبناء، وتفحص الثغرات في الحزم، وتفحص صلاحية روابط النشر،
+# وتفتح بلاغًا (Issue) تلقائيًا عند أي فشل حتى يُصحَّح.
+name: maintenance
+on:
+  schedule:
+    - cron: '17 23 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: { pkg: [app, api, contracts] }
+    defaults: { run: { working-directory: '${{ matrix.pkg }}' } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: if [ -f package-lock.json ]; then npm ci --ignore-scripts; else npm install --ignore-scripts --no-fund; fi
+      - name: Vulnerabilities (production deps, high and above)
+        run: npm audit --omit=dev --audit-level=high
+      - name: Outdated report
+        run: npm outdated || true
+  live:
+    runs-on: ubuntu-latest
+    if: ${{ vars.SHN_API_BASE != '' }}
+    steps:
+      - name: API health
+        run: curl -fsS --max-time 15 "${{ vars.SHN_API_BASE }}/health" | grep -q '"ok":true'
+      - name: Website security headers
+        if: ${{ vars.SHN_WEBSITE_URL != '' }}
+        run: |
+          h=$(curl -fsSI --max-time 15 "${{ vars.SHN_WEBSITE_URL }}")
+          for k in content-security-policy strict-transport-security x-content-type-options referrer-policy; do
+            echo "$h" | grep -qi "^$k:" || { echo "missing $k"; exit 1; }
+          done
+  report:
+    needs: [checks, audit, live]
+    if: ${{ always() && (needs.checks.result == 'failure' || needs.audit.result == 'failure' || needs.live.result == 'failure') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `صيانة دورية: فشل فحص ${new Date().toISOString().slice(0, 10)}`;
+            const body = [
+              'فشل أحد فحوص وحدة الصيانة الدورية.',
+              `- الاختبارات والبناء: ${'${{ needs.checks.result }}'}`,
+              `- الثغرات في الحزم: ${'${{ needs.audit.result }}'}`,
+              `- الخدمات المنشورة: ${'${{ needs.live.result }}'}`,
+              '',
+              `السجل: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+            ].join('\n');
+            // تشغيل يومي: لا نكرر البلاغ، نعلّق على البلاغ المفتوح إن وُجد
+            const open = await github.rest.issues.listForRepo({ ...context.repo, state: 'open', labels: 'maintenance', per_page: 1 });
+            if (open.data.length) {
+              await github.rest.issues.createComment({ ...context.repo, issue_number: open.data[0].number, body: `${title}\n\n${body}` });
+            } else {
+              await github.rest.issues.create({ ...context.repo, title, body, labels: ['maintenance'] });
+            }

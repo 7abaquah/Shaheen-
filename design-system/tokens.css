@@ -1,0 +1,60 @@
+/* هوية شاهين — generated from tokens.json */
+:root, [data-theme="dark"] {
+  --gold-300: #f8ba4e;
+  --gold-500: #f0a028;
+  --gold-700: #b9741a;
+  --gold-900: #7a4a0c;
+  --ink: #000000;
+  --surface-100: #070502;
+  --surface-200: #120d06;
+  --line: #f0a0282e;
+  --text: #fff4de;
+  --text-muted: #b9a27a;
+  --accent-text: #f0a028;
+  --on-gold: #1a1006;
+  --success: #4cc489;
+  --danger: #f07a63;
+  --info: #6db6ee;
+  --focus-ring: #f8ba4e;
+  --glow-gold: 0 0 28px #F0A02838;
+}
+[data-theme="light"] {
+  --surface-100: #fbf6ec;
+  --surface-200: #ffffff;
+  --line: #b9741a38;
+  --text: #1a1206;
+  --text-muted: #6b5634;
+  --accent-text: #8a560e;
+  --success: #1e7148;
+  --danger: #b0361f;
+  --info: #1c66a6;
+  --focus-ring: #8a560e;
+  --glow-gold: 0 6px 20px #B9741A2E;
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 32px;
+  --space-7: 64px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --font-kufi: "Reem Kufi", "Cairo", system-ui, sans-serif;
+  --font-sans: "Cairo", "Tajawal", system-ui, sans-serif;
+  --font-body: "Tajawal", "Cairo", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+.display-xl { font-family: var(--font-kufi); font-size: 64px; line-height: 1.15; font-weight: 700; }
+.display { font-family: var(--font-kufi); font-size: 44px; line-height: 1.2; font-weight: 700; }
+.h1 { font-family: var(--font-sans); font-size: 30px; line-height: 1.35; font-weight: 800; }
+.h2 { font-family: var(--font-sans); font-size: 22px; line-height: 1.45; font-weight: 700; }
+.h3 { font-family: var(--font-sans); font-size: 17px; line-height: 1.5; font-weight: 700; }
+.figure { font-family: var(--font-sans); font-size: 28px; line-height: 1.2; font-weight: 800; }
+.body { font-family: var(--font-body); font-size: 16px; line-height: 1.75; font-weight: 400; }
+.body-sm { font-family: var(--font-body); font-size: 14px; line-height: 1.7; font-weight: 500; }
+.caption { font-family: var(--font-body); font-size: 12px; line-height: 1.6; font-weight: 500; }
+.address { font-family: var(--font-mono); font-size: 12px; line-height: 1.5; font-weight: 500; }

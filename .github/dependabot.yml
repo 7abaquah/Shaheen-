@@ -1,0 +1,21 @@
+# تحديثات أمنية وأسبوعية للحزم، مجمّعة لتقليل الضوضاء
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /app
+    schedule: { interval: daily, time: '02:30', timezone: Asia/Riyadh }
+    groups: { app-minor: { update-types: [minor, patch] } }
+    open-pull-requests-limit: 5
+  - package-ecosystem: npm
+    directory: /api
+    schedule: { interval: daily, time: '02:30', timezone: Asia/Riyadh }
+    open-pull-requests-limit: 3
+  - package-ecosystem: npm
+    directory: /contracts
+    schedule: { interval: monthly }
+    ignore:
+      - dependency-name: '@openzeppelin/contracts'   # تغيير نسخة OZ يحتاج مراجعة تدقيق
+    open-pull-requests-limit: 3
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly }

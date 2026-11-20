@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://shaheen.example/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/en/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/token/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/token/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/token/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/token/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/en/token/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/token/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/token/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/token/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/subscribe/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/subscribe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/subscribe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/subscribe/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/en/subscribe/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/subscribe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/subscribe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/subscribe/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/investors/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/investors/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/investors/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/investors/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/en/investors/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/investors/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/investors/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/investors/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/privacy/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/privacy/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/en/privacy/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/privacy/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/terms/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/terms/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/en/terms/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/terms/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/security/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/security/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/security/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/security/"/>
+  </url>
+  <url>
+    <loc>https://shaheen.example/en/security/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://shaheen.example/security/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shaheen.example/en/security/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shaheen.example/security/"/>
+  </url>
+</urlset>

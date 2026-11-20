@@ -1,0 +1,16 @@
+<!-- @dsCard group="البيانات" height=120 subtitle="تقدم البيع وطاقة العقد" -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Cairo:wght@600;700;800&family=Tajawal:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>body{margin:0;background:var(--surface-100);color:var(--text);font-family:var(--font-body)} #root{padding:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var h = React.createElement, S = window.Shaheen;
+ReactDOM.createRoot(document.getElementById('root')).render(h('div',{style:{display:'grid',gap:14,width:'100%'}},h('div',null,h('div',{className:'body-sm',style:{marginBottom:6}},'البيع المسبق: 612,400 / 2,400,000 USDT'),h(S.Progress,{value:612400,max:2400000,label:'تقدم البيع المسبق'})),h('div',null,h('div',{className:'body-sm',style:{marginBottom:6}},'الطاقة النظيفة في عقدة مكة: 94%'),h(S.Progress,{value:94,max:100,tone:'success',label:'الطاقة النظيفة'}))));
+</script>
+</body>
+</html>

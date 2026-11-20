@@ -1,2 +1,18 @@
 # Google App Engine generated folder
 appengine-generated/
+
+node_modules/
+dist/
+.dev/
+.wrangler/
+.dev.vars
+.env
+app/android/
+app/ios/
+app/out/
+contracts/artifacts/
+contracts/cache/
+contracts/deployments-local.json
+*.jks
+*.p12
+*.mobileprovision
